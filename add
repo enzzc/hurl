@@ -1,0 +1,12 @@
+#!/bin/bash
+
+url="$1"
+
+hashed_url=$(echo "$url" | sha1sum | cut -d' ' -f1)
+
+prefix=${hashed_url:0:2}
+rest=${hashed_url:2}
+
+mkdir -p db/$prefix
+echo "$url" > db/$prefix/$rest
+echo $hashed_url

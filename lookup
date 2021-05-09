@@ -1,0 +1,5 @@
+#!/bin/bash
+
+lookup="$1"
+
+find db/${lookup:0:2} -name "${lookup:2}*" | xargs cat
