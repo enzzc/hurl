@@ -1,0 +1,29 @@
+# hurl
+
+Hashed URL Lookup
+
+
+## Usage
+
+```bash
+# Add a key to the database
+$ ./add "https://github.com/enzzc/hurl"
+0b2fc95ac2f84a60828139d3c12c1d41dc746044
+
+# Retrieve a key by its hash (at least 3 chars)
+$ ./lookup 0b2fc9
+https://github.com/enzzc/hurl
+```
+
+The tree will look like this:
+
+```console
+$ tree db
+db
+└── 0b
+    └── 2fc95ac2f84a60828139d3c12c1d41dc746044
+
+1 directory, 1 file
+```
+
+It acts like a simple key-value store. The layout is inspired by the [Git object database](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects).
