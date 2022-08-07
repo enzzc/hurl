@@ -1,0 +1,6 @@
+#!/bin/bash
+
+find db -type f | while read -r f; do
+    echo $f | sed -e 's/^db//g' -e's|/||g' | xargs printf "%s "
+    cat $f
+done
